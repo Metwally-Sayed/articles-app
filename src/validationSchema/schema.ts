@@ -3,7 +3,7 @@ import * as yup from "yup";
 export const loginSchema = yup
   .object()
   .shape({
-    email: yup.string().email().required(),
+    userName: yup.string().required(),
     password: yup
       .string()
       .min(8, "must be at least 8 characters long")

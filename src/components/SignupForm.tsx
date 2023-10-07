@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import InputError from "./InputError";
 import { registrationSchema } from "../validationSchema/schema";
-import { Userdata } from "../typs";
+import { Userdata } from "../types";
+import { userSignUp } from "../lib/api";
+import { useNavigate } from "react-router-dom";
+import { VerifyUser } from "../lib/functions";
 
 type Props = {};
 
 const SignupForm = (props: Props) => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,8 +21,21 @@ const SignupForm = (props: Props) => {
   });
 
   const formHandler = (data: Userdata) => {
-    console.log(data);
+    userSignUp(
+      {
+        ...data,
+        DisplayName: data.userName,
+        RoleName: "Anonymous",
+        roleId: 2,
+        isActive: true,
+      },
+      navigate
+    );
   };
+
+  useEffect(() => {
+    VerifyUser(navigate);
+  }, []);
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit(formHandler)}>
