@@ -1,11 +1,12 @@
 export interface Userdata {
-  userName?: string;
+  DisplayName?: string | undefined;
   RoleName?: string;
-  password?: string;
-  email?: string;
-  DisplayName?: string;
-  RoleId?: number;
-  isActive?: boolean;
+  roleId?: number;
+  isActive?: true;
+  userName: string | undefined;
+  password: string | undefined;
+  email: string | undefined;
+  RoleId?: number | undefined;
 }
 
 export interface decodedJWT {

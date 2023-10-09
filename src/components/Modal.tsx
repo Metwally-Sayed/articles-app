@@ -1,11 +1,10 @@
-import React, { ElementType, ExoticComponent, ReactNode } from "react";
+import React, { ElementType } from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
-type Props = {};
 
-const Modal = (props: Props) => {
+const Modal = () => {
   const [open, setOpen] = useState(true);
   return (
     <Transition.Root show={open} as={Fragment as ElementType | undefined}>

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import InputError from "./InputError";
 import { registrationSchema } from "../validationSchema/schema";
 import { Userdata } from "../types";
 import { userSignUp } from "../lib/api";
 import { Link, useNavigate } from "react-router-dom";
 import { VerifyUser } from "../lib/functions";
+import InputError from "./InputError";
 
 const SignupForm = () => {
   const navigate = useNavigate();
