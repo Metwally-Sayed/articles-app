@@ -1,4 +1,3 @@
-import React from "react";
 import { Articale } from "../../types";
 import ActionBtn from "../ActionBtn";
 import { useNavigate } from "react-router-dom";

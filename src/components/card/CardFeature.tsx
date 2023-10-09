@@ -10,7 +10,6 @@ import { listArticale } from "../../redux/features/listSclice";
 import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 
-
 const CardFeature = () => {
   const navigate = useNavigate();
   const cookies = new Cookies();
@@ -20,7 +19,6 @@ const CardFeature = () => {
   const articalesData = useSelector((state: RootState) => state.articale);
   const userRole = user.RoleName || cookies.get("role");
   const userName = user?.UserName || cookies.get("userName");
-
 
   const [filteredArticals, setFilteredArticals] = useState<
     Articale[] | undefined
@@ -59,6 +57,7 @@ const CardFeature = () => {
           allArticals(dispatch),
           allCategories(),
         ]);
+        console.log(articalsData);
         setcategories(categoriesData?.data);
       } catch (error) {
         console.error("Error:", error);
@@ -73,7 +72,6 @@ const CardFeature = () => {
     setFilteredArticals(filteredArticles);
     return filteredArticles;
   };
-
 
   return (
     <main className=" md:flex w-full ">

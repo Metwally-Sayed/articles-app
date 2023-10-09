@@ -7,7 +7,7 @@ export const articaleSlice = createSlice({
   name: "articale",
   initialState,
   reducers: {
-    getArticale: (state, action: PayloadAction) => action.payload,
+    getArticale: (_state, action: PayloadAction) => action.payload,
   },
 });
 

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Category, Userdata } from "../types";
+import { Category } from "../types";
 import { RootState } from "../redux/store";
 import Cookies from "universal-cookie";
 
@@ -12,7 +12,7 @@ const Filter = ({ categories, categoriesFilter }: Props) => {
   const cookies = new Cookies();
   const userName = cookies.get("userName");
 
-  const user: Userdata = useSelector(
+  const user = useSelector(
     (state: RootState) => state.user.LoginUser
   );
 
