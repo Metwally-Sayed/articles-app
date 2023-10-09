@@ -12,10 +12,9 @@ export const VerifyUser = (navigate: NavigateFunction) => {
     const current_time = Date.now() / 1000;
     if (expirationDate < current_time) {
       cookies.remove("token");
+      navigate("/login");
     } else {
       navigate("/", { replace: true });
     }
-  } else if (!token) {
-    navigate("/login", { replace: true });
-  }
+  } 
 };

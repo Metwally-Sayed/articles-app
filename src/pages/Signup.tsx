@@ -1,9 +1,8 @@
 import React from "react";
 import Form from "../components/SignupForm";
 
-type Props = {};
 
-const Signup = (props: Props) => {
+const Signup = () => {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center py-64 sm:px-6 lg:px-8">
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">

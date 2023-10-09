@@ -2,12 +2,28 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export interface UserState {
   Token: string;
-  LoginUser: object;
+  LoginUser: {
+    UserName: string;
+    DisplayName: string;
+    Id: string;
+    IsActive: boolean;
+    Password: string;
+    RoleId: number;
+    RoleName: string;
+  };
 }
 
 const initialState: UserState = {
   Token: "",
-  LoginUser: {},
+  LoginUser: {
+    UserName: "",
+    DisplayName: "",
+    Id: "",
+    IsActive: false,
+    Password: "",
+    RoleId: 0,
+    RoleName: "",
+  },
 };
 
 export const userSlice = createSlice({

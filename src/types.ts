@@ -1,10 +1,10 @@
 export interface Userdata {
-  userName: string;
+  userName?: string;
   RoleName?: string;
   password?: string;
-  email: string;
+  email?: string;
   DisplayName?: string;
-  roleId?: number;
+  RoleId?: number;
   isActive?: boolean;
 }
 
@@ -15,14 +15,19 @@ export interface decodedJWT {
 }
 
 export interface Articale {
-  body: string;
   categoryId: number;
-  categoryName: string;
-  date: string;
-  id: number;
-  isActive: boolean;
-  title: string;
-  userId: number;
-  writerName: string;
+  body?: string | undefined;
+  categoryName?: string | undefined;
+  date?: string | undefined;
+  id?: number | undefined;
+  isActive?: boolean | undefined;
+  title?: string | undefined;
+  userId?: number | undefined;
+  writerName?: string | undefined;
 }
 
+export interface Category {
+  id: number;
+  isActive: boolean;
+  name: string;
+}

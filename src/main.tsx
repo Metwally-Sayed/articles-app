@@ -8,21 +8,9 @@ import Signup from "./pages/Signup.tsx";
 import { store } from "./redux/store.ts";
 import { Provider } from "react-redux";
 import PrivateRoutes from "./components/PrivateRoutes.tsx";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "/login",
-//     element: <Login />,
-//   },
-//   {
-//     path: "/signup",
-//     element: <Signup />,
-//   },
-// ]);
+import Listed from "./pages/Listed.tsx";
+import Article from "./pages/Article.tsx";
+import Update from "./pages/Update.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -31,6 +19,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route element={<PrivateRoutes />}>
             <Route path="/*" element={<App />} />
+            <Route path="/listed" element={<Listed />} />
+            <Route path="/article/:id" element={<Article />} />
+            <Route path="/update/:id" element={<Update />} />
+            <Route path="/create" element={<Update />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
